@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-DO LIST APP</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="todo-app">
+      <h1>TO-DO APP</h1>
+      <div class="stat-conatiner">
+        <div class="details">
+          <h3>Keep it Up!</h3>
+          <div id="progressbar">
+            <div id="progress">
+
+            </div>
+          </div>
+
+        </div>
+        <div class="stats-number">
+          <p id="number">0 / 0</p>
+        </div>
+      </div>
+      <form class="input-area">
+        <input type="text" id="task-enter" placeholder="ADD A NEW TASK....">
+        <button type="button" id="task-btn"><i class="fa-solid fa-plus"></i></button>
+      </form>
+      <div class="task-container">
+        <ul id="task-items">
+        </ul>
+        <img src="delayed.png" class="empty-image" alt="empty" width="250px">
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+</html>

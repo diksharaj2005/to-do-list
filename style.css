@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(image/bgc.webp) no-repeat center center/cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.todo-app h1 {
+    font-size: 2rem;
+}
+
+.stat-conatiner {
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.details {
+    width: 100%;
+}
+
+.details h3 {
+    color:white;
+}
+
+#progressbar {
+    width: 100%;
+    height: 7px;
+    /* background: rgba(211, 185, 185, 0.3); */
+    background-image: linear-gradient(rgb(236, 0, 39),orange,rgb(255, 30, 0));
+    border-radius: 20px;
+    position: relative;
+    margin-top: 15px;
+}
+
+#progress {
+    width: 50%;
+    height: 100%;
+    background: #ffff00;
+    transition: width 0.3s ease;
+}
+
+
+#number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(rgb(236, 0, 39),rgb(162, 0, 255),rgb(255, 30, 0));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-radius: 22px;
+    background: rgb(241 183 212 / 30%);
+    color: rgb(36, 35, 35)
+}
+
+.input-area input::placeholder {
+    color:white;
+}
+
+.input-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.1rem;
+    background-color: rgb(241 183 212 / 30%);
+    ;
+    border: 2px solid rgba(255, 255, 255, 0.20);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+    transform: scale(1.1);
+    background-color: #8a0728;
+}
+
+.task-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#task-items {
+    width: 100%;
+}
+
+#task-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(241 183 212 / 30%);
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: white;
+    position: relative;
+    transition: box-shadow 0.2s ease;
+}
+
+/* Task item hover effect */
+#task-items li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom checkbox styling */
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Space between checkbox and text */
+}
+
+.custom-checkbox input {
+    opacity: 0;
+    /* Hide the default checkbox */
+    position: absolute;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    /* Transparent background */
+    border-radius: 50%;
+    /* Circular shape */
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect for the custom checkbox */
+.custom-checkbox:hover .checkmark {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light background on hover */
+}
+
+/* Checked state */
+.custom-checkbox input:checked+.checkmark {
+    background-color: #8a0728;
+    /* Change background when checked */
+    border-color: rgba(255, 255, 255, 1);
+    /* Change border color when checked */
+}
+
+/* Checkmark symbol */
+.custom-checkbox input:checked+.checkmark::after {
+    content: '\2713';
+    /* Checkmark symbol */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+/* Task text styling */
+#task-items li span {
+    flex: 1;
+    margin-left: 10px;
+    word-wrap: break-word;
+    color: white;
+    /* Ensure text color is visible */
+}
+
+#task-items li.completed span {
+    text-decoration: 2px line-through #000;
+    color: #000;
+}
+
+.task-btns {
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.task-btns button {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.task-btns button:hover {
+    transform: scale(1.2);
+}
+
+.task-btns .edit-btn {
+    background-color: aqua;
+}
+
+.task-btns .delete-btn {
+    background-color: crimson;
+}
+/* media query */
+@media (max-width: 768px) {
+    .container{
+    margin: 0 20px;
+    padding: 0 20px;;
+}
+.todo-app{
+    padding: 1.5rem;
+    gap: 20px;
+}
+#number{
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+}
+.input-area input{
+ font-size: 0.8rem;
+}
+#task-items li{
+    font-size: 1rem;
+}
+}
