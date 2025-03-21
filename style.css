@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(image/bg.webp) no-repeat center center/cover;
+    background: url(image/bgc.webp) no-repeat center center/cover;
 }
 
 .container {
